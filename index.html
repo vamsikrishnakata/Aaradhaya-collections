@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aaradhya Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ICONS (for footer Instagram/YouTube/WhatsApp) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- TOP NAVIGATION (single-page links) -->
+  <div class="top-nav">
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#about">About Us</a>
+    <a href="#footer">Contact</a>
+
+  </div>
+
+  <!-- HOME SECTION -->
+  <section id="home">
+    <!-- PREMIUM SEARCH BAR -->
+    <div class="search-wrapper">
+      <div class="modern-search">
+        <span class="search-icon">🔍</span>
+        <input id="searchInput" type="text" placeholder="Search jewellery, earrings, chains...">
+      </div>
+    </div>
+
+    <!-- BACKGROUND IMAGE ONLY SECTION (TITLE BANNER) -->
+    <div class="tagline-bg"></div>
+  </section>
+
+  <!-- SHOP SECTION -->
+  <section id="shop" class="shop-section">
+    <!-- MAIN LAYOUT -->
+    <div class="container">
+
+      <!-- FILTERS LEFT -->
+      <div class="filters">
+        <h3>Filters</h3>
+        <hr>
+
+        <!-- CATEGORY FILTER -->
+        <h4>Categories</h4>
+        <label><input type="checkbox" name="category" value="earrings"> Earrings</label>
+        <label><input type="checkbox" name="category" value="chains"> Chains</label>
+        <label><input type="checkbox" name="category" value="bangles"> Bangles</label>
+        <label><input type="checkbox" name="category" value="rings"> Rings</label>
+        <label><input type="checkbox" name="category" value="necklace"> Necklaces</label>
+        <label><input type="checkbox" name="category" value="accessories"> Accessories</label>
+
+        <br><hr>
+
+        <!-- SORTING -->
+        <h4>Sort By</h4>
+        <select id="sortOption" onchange="applyFilters()" style="
+          width:100%;
+          padding:10px;
+          border:1px solid #bde5c7;
+          border-radius:6px;
+          margin-bottom:15px;">
+          <option value="">Default</option>
+          <option value="low-high">1. Price: Low to High</option>
+          <option value="high-low">2. Price: High to Low</option>
+          <option value="popularity">3. Popularity</option>
+          <option value="latest">4. Latest</option>
+        </select>
+
+        <br><hr>
+
+        <!-- PRICE FILTER -->
+        <h4>Price Range</h4>
+        <input id="priceSlider" type="range" min="50" max="1000" value="1000" class="price-slider">
+        <p>Up to ₹ <span id="priceValue">1000</span></p>
+
+        <br><hr>
+
+        <button class="apply-btn" onclick="applyFilters()">Apply Filter</button>
+      </div>
+
+      <!-- PRODUCTS GRID -->
+      <div class="products" id="productList">
+
+        <!-- PRODUCT 1 -->
+        <div class="product-card"
+             data-name="Elegant Earrings"
+             data-category="earrings"
+             data-price="199"
+             data-popularity="95"
+             data-date="20250110"
+             data-images="images/6.jpg,images/6.jpg,images/6.jpg">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/6.jpg" alt="Elegant Earrings">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Gold Plated Necklace</div>
+          <div class="product-price">₹299</div>
+           
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="product-card"
+             data-name="Pearl Jhumkas"
+             data-category="earrings"
+             data-price="249"
+             data-popularity="92"
+             data-date="20250118"
+             data-images="images/7.png,images/7.png,images/7.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/7.png" alt="Pearl Jhumkas">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Fancy Bracelet with earrings</div>
+          <div class="product-price">₹249</div>
+         </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="product-card"
+             data-name="Gold Plated Necklace"
+             data-category="necklace"
+             data-price="399"
+             data-popularity="88"
+             data-date="20250110"
+             data-images="images/5.png,images/5.png,images/5.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/5.png" alt="Gold Plated Necklace">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Silver Plated Necklace</div>
+          <div class="product-price">₹399</div>
+         </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="product-card"
+             data-name="Bangle Set"
+             data-category="bangles"
+             data-price="179"
+             data-popularity="80"
+             data-date="20241220"
+             data-images="images/4.png,images/4.png,images/4.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/4.png" alt="Bangle Set">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Gold earrings</div>
+          <div class="product-price">₹179</div>
+         </div>
+
+        <!-- PRODUCT 5 -->
+        <div class="product-card"
+             data-name="Fancy Bracelet"
+             data-category="accessories"
+             data-price="129"
+             data-popularity="90"
+             data-date="20250105"
+             data-images="images/10.png,images/10.png,images/10.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/10.png" alt="Fancy Bracelet">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Star earrings</div>
+          <div class="product-price">₹129</div>
+         </div>
+
+        <!-- PRODUCT 6 -->
+        <div class="product-card"
+             data-name="Heart Ring"
+             data-category="rings"
+             data-price="119"
+             data-popularity="78"
+             data-date="20241230"
+             data-images="images/9.png,images/9.png,images/9.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/9.png" alt="Heart Ring">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Gold Bangles</div>
+          <div class="product-price">₹119</div>
+         </div>
+
+        <!-- PRODUCT 7 -->
+        <div class="product-card"
+             data-name="Heart Ring"
+             data-category="rings"
+             data-price="119"
+             data-popularity="78"
+             data-date="20241230"
+             data-images="images/2.png,images/2.png,images/2.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/2.png" alt="Heart Ring">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Pearl Jhumkas</div>
+          <div class="product-price">₹119</div>
+         </div>
+
+        <!-- PRODUCT 8 -->
+        <div class="product-card"
+             data-name="Heart Ring"
+             data-category="rings"
+             data-price="119"
+             data-popularity="78"
+             data-date="20241230"
+             data-images="images/1.png,images/1.png,images/1.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/1.png" alt="Heart Ring">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Flower Bangles</div>
+          <div class="product-price">₹119</div>
+         </div>
+
+        <!-- PRODUCT 9-->
+        <div class="product-card"
+             data-name="Heart Ring"
+             data-category="rings"
+             data-price="119"
+             data-popularity="78"
+             data-date="20241230"
+             data-images="images/8.png,images/8.png,images/8.png">
+
+          <div class="product-image-wrapper">
+            <button class="card-prev" onclick="prevCardImage(this)">&#10094;</button>
+            <img class="product-img" src="images/8.png" alt="Heart Ring">
+            <button class="card-next" onclick="nextCardImage(this)">&#10095;</button>
+          </div>
+
+          <div class="product-title">Earrings</div>
+          <div class="product-price">₹119</div>
+         </div>
+
+      </div>
+    </div>
+  </section>
+   
+  <!-- FOOTER -->
+  <footer id="footer" class="footer">
+    <p class="footer-text1">Contact on</p>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/aaradhya_collections1?igsh=MWJ6OThoMTdlNDQxYQ==" target="_blank" class="icon fa fa-instagram"></a>
+      <a href="https://youtube.com" target="_blank" class="icon fa fa-youtube"></a>
+      <a href="https://wa.me/919392036059" target="_blank" class="icon fa fa-whatsapp"></a>
+    </div>
+    <p class="footer-text">© 2025 Aaradhya Collections • Nellore, Andhra Pradesh</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // PRICE SLIDER TEXT
+    const slider = document.getElementById("priceSlider");
+    const priceValue = document.getElementById("priceValue");
+    slider.oninput = function () {
+      priceValue.textContent = this.value;
+    };
+
+    // WHATSAPP ORDER FUNCTION
+    function order(productName) {
+      const phone = "919392036059";
+      const msg = `Hi, I want to order this product: ${productName}`;
+      window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`);
+    }
+
+    // FILTER + SEARCH + SORT
+    function applyFilters() {
+      let searchText = document.getElementById("searchInput").value.toLowerCase();
+      let maxPrice = document.getElementById("priceSlider").value;
+      let sortOption = document.getElementById("sortOption").value;
+
+      let selectedCategories = [];
+      document.querySelectorAll("input[name='category']:checked")
+        .forEach(c => selectedCategories.push(c.value));
+
+      let products = Array.from(document.querySelectorAll(".product-card"));
+
+      // FILTERING
+      products.forEach(card => {
+        let name = card.dataset.name.toLowerCase();
+        let price = parseInt(card.dataset.price);
+        let category = card.dataset.category;
+
+        let matchesSearch = name.includes(searchText);
+        let matchesPrice = price <= maxPrice;
+        let matchesCategory =
+          selectedCategories.length === 0 || selectedCategories.includes(category);
+
+        card.style.display = (matchesSearch && matchesPrice && matchesCategory)
+          ? "block"
+          : "none";
+      });
+
+      // SORTING
+      let visibleProducts = products.filter(p => p.style.display !== "none");
+      let productList = document.getElementById("productList");
+
+      if (sortOption === "low-high") {
+        visibleProducts.sort((a, b) => a.dataset.price - b.dataset.price);
+      } else if (sortOption === "high-low") {
+        visibleProducts.sort((a, b) => b.dataset.price - a.dataset.price);
+      } else if (sortOption === "popularity") {
+        visibleProducts.sort((a, b) => b.dataset.popularity - a.dataset.popularity);
+      } else if (sortOption === "latest") {
+        visibleProducts.sort((a, b) => b.dataset.date - a.dataset.date);
+      }
+
+      visibleProducts.forEach(card => productList.appendChild(card));
+    }
+
+    // LIVE SEARCH
+    document.getElementById("searchInput").addEventListener("keyup", applyFilters);
+
+    // SMALL SLIDER INSIDE EACH PRODUCT CARD
+    function updateCardImage(cardElem, step) {
+      const imagesStr = cardElem.dataset.images;
+      if (!imagesStr) return;
+
+      const imgs = imagesStr.split(",").map(s => s.trim()).filter(Boolean);
+      if (!imgs.length) return;
+
+      let idx = parseInt(cardElem.dataset.imgIndex || "0", 10);
+      idx = (idx + step + imgs.length) % imgs.length;
+      cardElem.dataset.imgIndex = idx;
+
+      const imgTag = cardElem.querySelector(".product-img");
+      imgTag.src = imgs[idx];
+    }
+
+    function nextCardImage(btn) {
+      const card = btn.closest(".product-card");
+      updateCardImage(card, +1);
+    }
+
+    function prevCardImage(btn) {
+      const card = btn.closest(".product-card");
+      updateCardImage(card, -1);
+    }
+  </script>
+
+</body>
+</html>
